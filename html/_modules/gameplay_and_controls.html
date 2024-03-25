@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gameplay_and_controls &#8212; Tetris 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b3523f8e" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=af2ce170"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for gameplay_and_controls</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Модуль Игрового Поля</span>
+<div class="viewcode-block" id="GameBoard"><a class="viewcode-back" href="../gameplay_and_controls.html#gameplay_and_controls.GameBoard">[docs]</a><span class="k">class</span> <span class="nc">GameBoard</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Класс для создания и управления игровым полем.</span>
+
+<span class="sd">    Поля:</span>
+<span class="sd">    - width: int - ширина игрового поля</span>
+<span class="sd">    - height: int - высота игрового поля</span>
+<span class="sd">    - board: list - двумерный массив, представляющий игровое поле</span>
+
+<span class="sd">    Методы:</span>
+<span class="sd">    - draw(): отрисовка игрового поля</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Инициализация игрового поля.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">board</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">width</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">)]</span>
+
+<div class="viewcode-block" id="GameBoard.draw"><a class="viewcode-back" href="../gameplay_and_controls.html#gameplay_and_controls.GameBoard.draw">[docs]</a>    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Отрисовка игрового поля.&quot;&quot;&quot;</span>
+        <span class="c1"># код отрисовки игрового поля</span>
+        <span class="k">pass</span></div></div>
+
+<span class="c1"># Модуль Фигур</span>
+<div class="viewcode-block" id="Tetrominoes"><a class="viewcode-back" href="../gameplay_and_controls.html#gameplay_and_controls.Tetrominoes">[docs]</a><span class="k">class</span> <span class="nc">Tetrominoes</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Класс для работы с фигурами (тетромино).</span>
+
+<span class="sd">    Поля:</span>
+<span class="sd">    - shapes: list - список различных фигур</span>
+
+<span class="sd">    Методы:</span>
+<span class="sd">    - rotate(): вращение фигуры</span>
+<span class="sd">    - move(): перемещение фигуры по игровому полю</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Инициализация фигур.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">shapes</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>  <span class="c1"># список различных фигур</span>
+
+<div class="viewcode-block" id="Tetrominoes.rotate"><a class="viewcode-back" href="../gameplay_and_controls.html#gameplay_and_controls.Tetrominoes.rotate">[docs]</a>    <span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Вращение фигуры.&quot;&quot;&quot;</span>
+        <span class="c1"># код вращения фигур</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="Tetrominoes.move"><a class="viewcode-back" href="../gameplay_and_controls.html#gameplay_and_controls.Tetrominoes.move">[docs]</a>    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Перемещение фигуры.&quot;&quot;&quot;</span>
+        <span class="c1"># код перемещения фигур</span>
+        <span class="k">pass</span></div></div>
+
+<span class="c1"># Модуль Управления Игрой</span>
+<div class="viewcode-block" id="GameControl"><a class="viewcode-back" href="../gameplay_and_controls.html#gameplay_and_controls.GameControl">[docs]</a><span class="k">class</span> <span class="nc">GameControl</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Класс для управления игровым процессом.</span>
+
+<span class="sd">    Поля:</span>
+<span class="sd">    - game_board: GameBoard - экземпляр игрового поля</span>
+<span class="sd">    - tetrominoes: Tetrominoes - экземпляр фигур</span>
+
+<span class="sd">    Методы:</span>
+<span class="sd">    - process_input(key): обработка пользовательского ввода</span>
+<span class="sd">    - update_game(): обновление игрового процесса</span>
+<span class="sd">    - run_game(): запуск игрового цикла</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Инициализация управления игрой.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">game_board</span> <span class="o">=</span> <span class="n">GameBoard</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tetrominoes</span> <span class="o">=</span> <span class="n">Tetrominoes</span><span class="p">()</span>
+
+<div class="viewcode-block" id="GameControl.process_input"><a class="viewcode-back" href="../gameplay_and_controls.html#gameplay_and_controls.GameControl.process_input">[docs]</a>    <span class="k">def</span> <span class="nf">process_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Обработка пользовательского ввода.&quot;&quot;&quot;</span>
+        <span class="c1"># код обработки пользовательского ввода</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="GameControl.update_game"><a class="viewcode-back" href="../gameplay_and_controls.html#gameplay_and_controls.GameControl.update_game">[docs]</a>    <span class="k">def</span> <span class="nf">update_game</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Обновление игрового процесса.&quot;&quot;&quot;</span>
+        <span class="c1"># код обновления игрового процесса</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="GameControl.run_game"><a class="viewcode-back" href="../gameplay_and_controls.html#gameplay_and_controls.GameControl.run_game">[docs]</a>    <span class="k">def</span> <span class="nf">run_game</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Запуск игрового цикла.&quot;&quot;&quot;</span>
+        <span class="c1"># основной цикл игры</span>
+        <span class="k">pass</span></div></div>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Tetris</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2024, Rudi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

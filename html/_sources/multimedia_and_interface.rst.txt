@@ -1,0 +1,7 @@
+multimedia\_and\_interface module
+=================================
+
+.. automodule:: multimedia_and_interface
+   :members:
+   :undoc-members:
+   :show-inheritance:

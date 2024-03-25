@@ -1,0 +1,10 @@
+Project
+=======
+
+.. toctree::
+   :maxdepth: 4
+
+   gameplay_and_controls
+   main
+   multimedia_and_interface
+   network_communication_and_administration
