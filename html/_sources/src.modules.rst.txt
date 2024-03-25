@@ -1,0 +1,69 @@
+src.modules package
+===================
+
+Submodules
+----------
+
+src.modules.estimates and forecasting module
+--------------------------------------------
+
+.. automodule:: src.modules.estimates and forecasting
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.modules.financial\_operations module
+----------------------------------------
+
+.. automodule:: src.modules.financial_operations
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.modules.integration module
+------------------------------
+
+.. automodule:: src.modules.integration
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.modules.real\_data module
+-----------------------------
+
+.. automodule:: src.modules.real_data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.modules.social\_interaction module
+--------------------------------------
+
+.. automodule:: src.modules.social_interaction
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.modules.task\_management module
+-----------------------------------
+
+.. automodule:: src.modules.task_management
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.modules.virtual\_reality module
+-----------------------------------
+
+.. automodule:: src.modules.virtual_reality
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: src.modules
+   :members:
+   :undoc-members:
+   :show-inheritance:

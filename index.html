@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="wow.min.js"></script>
+    <script>new WOW().init()</script>
+    <script src="https://kit.fontawesome.com/fc5368a64a.js" crossorigin="anonymous"></script>
+    <title>Лабораторная работа № 6</title>
+</head>
+
+<script>
+    window.addEventListener('scroll', () => {
+        let distance = window.scrollY;
+        
+        document.querySelectorAll('.section').forEach((item, i)=>{
+
+            if  (item.offsetTop <= distance) {
+                
+                document.querySelectorAll(".navigationInnerItem, .navigationOuterItem").forEach((item) => {
+                    if (item.classList.contains('navigationInnerItemActive')) 
+                        item.classList.remove('navigationInnerItemActive');
+                    else if (item.classList.contains('navigationOuterItemActive')) 
+                        item.classList.remove('navigationOuterItemActive');
+                });
+
+                let tagA = document.querySelectorAll(".navigationInnerItem, .navigationOuterItem")[i];
+                if (tagA.classList[0] == 'navigationInnerItem')
+                    tagA.classList.add('navigationInnerItemActive');  
+                else if (tagA.classList[0] == 'navigationOuterItem')
+                    tagA.classList.add('navigationOuterItemActive');                  
+            }
+        });
+
+        var outerContainer = document.getElementById("outContainer");
+        var navigationMenu = document.getElementById("navMenu");
+
+        var queryOUT = document.querySelector("#outContainer");
+        var queryNAV = document.querySelector("#navMenu");
+        var queryFTR = document.querySelector("#footerID");
+             
+        var valuesOUT = queryOUT.getBoundingClientRect();
+        var valuesNAV = queryNAV.getBoundingClientRect();
+        var valuesFTR = queryFTR.getBoundingClientRect();
+
+        
+        
+        
+        if (valuesNAV.bottom > valuesFTR.top){
+            navigationMenu.style.opacity = 0+"%";
+         
+        }
+        else{
+            navigationMenu.style.opacity = 100+"%";
+          
+        }
+    });
+</script>
+<script>
+    document.ready(()=>{
+        document.querySelectorAll(".navigationInnerItem, .navigationOuterItem").forEach((current) => 
+        {
+            current.addEventListener('click', () => {
+                document.querySelectorAll(".navigationInnerItem, .navigationOuterItem").forEach((item) => {
+                    if (item.classList.contains('navigationInnerItemActive')) 
+                        item.classList.remove('navigationInnerItemActive');
+                    else if (item.classList.contains('navigationOuterItemActive')) 
+                        item.classList.remove('navigationOuterItemActive');
+                });
+            
+                if (current.classList[0] == 'navigationInnerItem')
+                    current.classList.add('navigationInnerItemActive');  
+                else if (current.classList[0] == 'navigationOuterItem')
+                    current.classList.add('navigationOuterItemActive');              
+            });
+            
+                
+        });
+    });
+
+</script>
+
+<body class="main">
+    <div class="header">
+        <div class="HELP_MANUAL">
+            <a class="buttonManual" target="_blank" href="https://github.com/YaRudi/Tetris">GITHUB</a>
+            <a class="buttonManual" target="_blank" href="html/index.html">DOCUMENTATION</a>
+            <a class="buttonManual" target="_blank" href="UserDoc.chm">CHM</a>
+        </div>
+    </div>
+
+    
+    <div class="outerContainer" id="outContainer">
+
+
+        <div class="navigationMenu" id="navMenu">
+            <ul class="navigationList">
+                <li><a class="navigationOuterItem navigationOuterItemActive" href="#Introduction">Introduction</a></li>
+                <li><a class="navigationOuterItem" href="#Chapter1">Gameplay and controls</a>
+                </li>
+                <li><a class="navigationOuterItem" href="#Chapter2">Multimedia and user interface</a>
+                </li>
+                <li><a class="navigationOuterItem" href="#Chapter3">Network communication and administration</a>
+                </li>
+                </li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <section class="section" id="Introduction">
+                <div class="sectionContainer">
+                    <div class="introduction">
+                        <p class="titleStyle">Введение</p>
+                        <p class="paragraphMargin">Современные компьютерные игры предлагают игрокам невероятно захватывающий игровой опыт, который включает в себя разнообразные аспекты, начиная от интересного игрового процесса и заканчивая мультимедийным оформлением и сетевым взаимодействием.</p>
+                        <p class="paragraphMargin">В этом исследовании мы сосредоточимся на различных аспектах игровой разработки, разбивая их на три части: игровой процесс и управление, мультимедиа и пользовательский интерфейс, а также сетевое взаимодействие и администрирование.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="section" id="Chapter1">
+                <div class="sectionContainer">
+                    <p class="titleStyle">Игровой процесс и управление</p>
+                    <p class="textStyle">В этой части собраны модули, отвечающие за основной игровой процесс и управление игрой. Здесь реализованы основные механики игры, такие как управление фигурами на игровом поле, подсчёт очков и уровней, а также возможность приостановки и продолжения игры.</p>
+                    <p class="textStyle">1. Модуль Игрового Поля (Game Board): Этот модуль создаёт и управляет игровым полем, на котором размещаются фигуры. Он отвечает за отображение игрового поля и проверку коллизий фигур с другими элементами.</p>             
+                    <p class="textStyle">2. Модуль Фигур (Tetrominoes): Здесь содержатся различные типы игровых фигур (тетромино), и реализованы функции их вращения и перемещения по игровому полю. Этот модуль определяет основные элементы игрового процесса.</p>
+                    <p class="textStyle">3. Модуль Управления Игрой (Game Control): Этот модуль отвечает за обработку пользовательских действий, таких как нажатия клавиш, и управляет основным игровым процессом. Он обеспечивает взаимодействие игрока с игрой.</p>
+                    <p class="textStyle">4. Модуль Очков и Уровней (Score and Levels): Здесь отслеживаются и обновляются счёт игрока и уровни сложности игры. Этот модуль ответственен за увеличение сложности игры с прохождением уровней и за награждение игрока за успешные достижения.</p>
+                    <p class="textStyle">5. Модуль Паузы и Продолжения (Pause and Resume): Данный модуль предоставляет возможность приостановить игру и в любой момент продолжить её. Он обеспечивает комфортное управление временными паузами во время игры.</p>
+                </div>
+            </section>
+            <section class="section" id="Chapter2">
+                <div class="sectionContainer">
+                    <p class="titleStyle">Мультимедиа и пользовательский интерфейс</p>
+                    <p class="textStyle">В этой части сосредоточены модули, отвечающие за мультимедиа контент игры и интерфейс взаимодействия с пользователем. Здесь реализованы анимации, звуковые эффекты, меню, чаты и другие элементы, сделавшие игру интересной и удобной для игрока.</p>
+                    <p class="textStyle">1. Модуль Анимации (Animation): Этот модуль обеспечивает анимацию движения фигур и других игровых событий, делая игровой процесс более динамичным и привлекательным.</p>             
+                    <p class="textStyle">2. Модуль Музыки и Звуков (Audio): Здесь управляются аудиоэффекты и фоновая музыка во время игры, что создаёт атмосферу и помогает погрузиться в игровой мир.</p>
+                    <p class="textStyle">3. Модуль Меню (Menu): Этот модуль содержит основные меню игры, такие как главное меню и меню настроек, обеспечивая удобный доступ к различным функциям игры.</p>
+                    <p class="textStyle">4. Модуль Чата (Chat): Здесь реализована чатовая функциональность для общения между игроками во время игры по сети, что делает игру более социальной и интерактивной.</p>
+                    <p class="textStyle">5. Модуль Системных Сообщений (System Messages): Этот модуль отображает информационные сообщения и уведомления о событиях в игре, обеспечивая игрокам необходимую обратную связь.</p>
+                    <p class="textStyle">6. Модуль Подсказок и Инструкций (Hints and Instructions): Здесь предоставляются игрокам подсказки и инструкции по игре, что помогает им быстрее разобраться в правилах и механиках игры.</p>
+                </div>
+            </section>
+            <section class="section" id="Chapter3">
+                <div class="sectionContainer">
+                    <p class="titleStyle">Сетевой взаимодействие и администрирование</p>
+                    <p class="textStyle">В этой части собраны модули, связанные с сетевым взаимодействием, администрированием игры и хранением данных. Здесь реализованы функции онлайн-игр, сохранения игры, работы с пользователями и другие задачи, связанные с сетевой инфраструктурой.</p>
+                    <p class="textStyle">1. Модуль Онлайн-Игры (Online Play): Этот модуль обеспечивает возможность игры по сети с другими игроками через интернет, расширяя возможности игрового процесса. Он отвечает за подключение к игровым серверам и организацию многопользовательских игровых сессий.</p>             
+                    <p class="textStyle">2. Модуль Сетевого Взаимодействия (Network Interaction): Здесь реализовано управление сетевым взаимодействием между игроками, передачей данных и синхронизацией игровых состояний. Этот модуль позволяет игрокам взаимодействовать друг с другом в реальном времени в рамках игровой сессии.</p>
+                    <p class="textStyle">3. Модуль Лобби (Lobby): Этот модуль предоставляет возможность создания и присоединения к игровым комнатам для многопользовательской игры, обеспечивая комфортную организацию игровых сессий. Здесь реализованы функции создания, поиска и присоединения к игровым лобби.</p>
+                    <p class="textStyle">4. Модуль Рейтинга и Достижений (Leaderboard and Achievements): Данный модуль отслеживает достижения игроков и ведёт рейтинговую таблицу лучших результатов. Он предоставляет игрокам возможность сравнивать свои успехи с другими игроками и получать дополнительные мотивации для игры.</p>             
+                    <p class="textStyle">5. Модуль Сохранения Игры (Save Game): Этот модуль позволяет сохранять текущее состояние игры и загружать его позже. Он обеспечивает сохранение прогресса игроков и возможность продолжения игры с последней сохранённой точки.</p>
+                    <p class="textStyle">6. Модуль Настроек (Settings): В этом модуле игрокам предоставляется возможность настраивать различные параметры игры, такие как управление, графика и звук. Это позволяет каждому игроку настроить игровой процесс по своему вкусу и предпочтениям.</p>
+                    <p class="textStyle">7. Модуль Учёта Игроков (Player Accounts): Этот модуль обеспечивает управление профилями игроков, авторизацию и аутентификацию. Он отвечает за создание и управление аккаунтами игроков, а также за безопасное хранение и защиту персональных данных.</p>             
+                    <p class="textStyle">8. Модуль Ресурсов (Resource Management): В этом модуле осуществляется управление загрузкой и управлением ресурсами игры, такими как изображения, звуки и текстуры. Он обеспечивает оптимальное использование ресурсов и улучшает производительность игры.</p>
+                    <p class="textStyle">9. Модуль Тестирования (Testing): Данный модуль отвечает за тестирование и отладку игрового процесса для обеспечения его стабильной работы. Он помогает выявить и исправить ошибки в игре до её выпуска и обеспечивает качество игрового процесса.</p>
+                </div>
+            </section>          
+        </div>
+    </div>
+
+    <div class="footer" id="footerID">
+        
+    </div>
+</body>
+</html>
